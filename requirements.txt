@@ -1,0 +1,14 @@
+torch==2.3.1 
+torchvision==0.18.1
+torchaudio==2.3.1
+diffusers==0.28.0
+accelerate==0.32.1
+numpy==1.26.4
+pandas==2.1.4
+tqdm==4.66.5
+pathlib==1.0.1
+matplotlib==3.7.1
+scipy==1.13.1
+Pillow==9.4.0
+jupyterlab==4.2.4
+notebook==7.2.1

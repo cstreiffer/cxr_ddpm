@@ -1,0 +1,43 @@
+model_name: "class_diffusion_large"
+model_output_path: 
+mixed_precision: "fp16"
+seed: 17
+dataset_settings:
+  # binary labels
+  label_cols:
+  - age
+  - sex_m
+  - sex_f
+  - ivsd
+  - lvpwd
+  - lvidd
+  downsample_size: 32
+  train: true
+  norm_cont_feat: true
+  cont_feat_labels:
+    - ivsd
+    - lvpwd
+    - lvidd
+metadata_df_paths:
+  train_metadata_path: 
+  eval_metadata_path: 
+  test_metadata_path: 
+num_feats: 6
+batch_size: 16
+gen_eval_batch_size: 16
+num_epochs: 20
+loss_fn: mse_p
+optimizer: adamw
+optimizer_kwargs:
+  lr: 0.0001
+lr_warmup_steps: 1000
+noise_scheduler_kwargs:
+  num_train_timesteps: 1000
+  beta_schedule: "squaredcos_cap_v2"
+cuda_idx: 0
+accumulate_grads_every_x_steps: 1
+gen_eval_every_x_batches: 2000
+eval_metrics_every_x_batches: 2000
+save_model_epochs: 1
+push_to_hub: false
+hub_model_id: "None"
